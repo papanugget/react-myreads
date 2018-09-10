@@ -25,7 +25,7 @@ class BooksApp extends React.Component {
   }
 
   render() {
-    console.log(this.state.books)
+    // console.log(this.state.books)
 
     return (
       <div className="app">
@@ -39,7 +39,10 @@ class BooksApp extends React.Component {
         */}
          {/* moved HTML code to separate components */}
          {/* Display imported components below */}
-         <MainPage/>
+         <MainPage
+          // pass props to page
+          books={this.state.books}
+         />
 
          <SearchPage/>
       </div>
