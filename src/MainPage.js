@@ -27,7 +27,9 @@ class MainPage extends Component {
                             <li key={book.id}>
                                 {/* moved book to book.js component */}
                                 <Book
+                                    // pass props to child page
                                     book={book}
+                                    changeShelf={this.props.changeShelf}
                                 />
                             </li>
                         ))
@@ -47,6 +49,7 @@ class MainPage extends Component {
                                 {/* moved book to book.js component */}
                                 <Book 
                                     book={book}
+                                    changeShelf={this.props.changeShelf}
                                 />
                             </li>
                         ))
@@ -67,6 +70,7 @@ class MainPage extends Component {
                                 {/* moved book to book.js component */}
                                 <Book
                                     book={book}
+                                    changeShelf={this.props.changeShelf}
                                 />
                             </li>
                         ))

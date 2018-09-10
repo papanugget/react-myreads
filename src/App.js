@@ -24,6 +24,13 @@ class BooksApp extends React.Component {
     })
   }
 
+  changeShelf=(book, shelf) => {
+    BooksAPI.update(book, shelf)
+
+    // refreshes UI after changing shelf
+    this.componentDidMount()
+  }
+
   render() {
     // console.log(this.state.books)
 
@@ -40,10 +47,10 @@ class BooksApp extends React.Component {
          {/* moved HTML code to separate components */}
          {/* Display imported components below */}
          <MainPage
-          // pass props to page
+          // pass props to child page
           books={this.state.books}
+          changeShelf={this.changeShelf}
          />
-
          <SearchPage/>
       </div>
     )

@@ -6,7 +6,7 @@ class BookShelf extends Component {
         console.log(this.props.books)
         return (
             <div className="bookshelf">
-                <h2 className="bookshelf-title">Experimental</h2>
+                <h2 className="bookshelf-title">{book.shelf}</h2>
                 <div className="bookshelf-books">
                 <ol className="books-grid">
                     <li>
