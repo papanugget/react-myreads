@@ -31,6 +31,7 @@ class MainPage extends Component {
                                     // pass props to child page
                                     book={book}
                                     changeShelf={this.props.changeShelf}
+                                    currentShelf="currentlyReading"
                                 />
                             </li>
                         ))
@@ -51,6 +52,7 @@ class MainPage extends Component {
                                 <Book 
                                     book={book}
                                     changeShelf={this.props.changeShelf}
+                                    currentShelf="wantToRead"
                                 />
                             </li>
                         ))
@@ -72,6 +74,7 @@ class MainPage extends Component {
                                 <Book
                                     book={book}
                                     changeShelf={this.props.changeShelf}
+                                    currentShelf="read"
                                 />
                             </li>
                         ))

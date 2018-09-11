@@ -8,12 +8,14 @@ class SearchPage extends Component {
     query: '',
     searchedBooks: []
   }
+
   updateQuery = (query) => {
     this.setState({
       query: query
     })
     this.findBooks(query)
   }
+
   findBooks = (query) => {
     if(query){
       BooksAPI.search(query).then((searchedBooks) => {
@@ -55,15 +57,25 @@ class SearchPage extends Component {
 
               <ol className="books-grid">
                 {
-                  this.state.searchedBooks
-                  .map(searchedBook => (
-                    <li key={searchedBook.id}>
-                      <Book
-                        book={searchedBook}
-                        changeShelf={this.props.changeShelf}
-                      />
-                    </li>
-                  ))
+                  this.state.searchedBooks.map(searchedBook => {
+                    // check shelf id
+                    let shelf ="none"
+
+                    this.props.books.map(book => (
+                      book.id === searchedBook.id ? 
+                      shelf = book.shelf : 
+                      ''
+                    ))
+                    return(
+                      <li key={searchedBook.id}>
+                        <Book
+                          book={searchedBook}
+                          changeShelf={this.props.changeShelf}
+                          currentShelf={shelf}
+                        />
+                      </li>
+                    )
+                  })
                 }
               </ol>          
             </div>
