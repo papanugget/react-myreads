@@ -46,11 +46,11 @@ class BooksApp extends React.Component {
         */}
          {/* moved HTML code to separate components */}
          {/* Display imported components below */}
-         <MainPage
+         {/* <MainPage
           // pass props to child page
           books={this.state.books}
           changeShelf={this.changeShelf}
-         />
+         /> */}
          <SearchPage/>
       </div>
     )

@@ -3,10 +3,12 @@ import React, { Component }from 'react';
 class Book extends Component {
     render(){
         // console.log(this.props.changeShelf)
+        let displayThumb = this.props.book.imageLinks ? 
+        this.props.book.imageLinks.thumbnail : '';
         return (
             <div className="book">
                 <div className="book-top">
-                <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url("${this.props.book.imageLinks.thumbnail}")`}}></div>
+                <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url("${displayThumb}")`}}></div>
                 <div className="book-shelf-changer">
                     <select 
                         onChange={(e) => this.props.changeShelf(
