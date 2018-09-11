@@ -3,6 +3,7 @@ import * as BooksAPI from './BooksAPI';
 import './App.css';
 import MainPage from './MainPage';
 import SearchPage from './SearchPage';
+import { Route } from 'react-router-dom';
 
 class BooksApp extends React.Component {
   // state = {
@@ -36,24 +37,21 @@ class BooksApp extends React.Component {
 
     return (
       <div className="app">
-        {/*
-          NOTES: The search from BooksAPI is limited to a particular set of search terms.
-          You can find these search terms here:
-          https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md
-
-          However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
-          you don't find a specific author or title. Every search is limited by search terms.
-        */}
-         {/* moved HTML code to separate components */}
+          {/* moved HTML code to separate components */}
          {/* Display imported components below */}
-         <MainPage
-          // pass props to child page
-          books={this.state.books}
-          changeShelf={this.changeShelf}
-         />
-         <SearchPage
-          changeShelf={this.changeShelf}
-         />
+         <Route exact path="/" render={() => (
+            <MainPage
+            // pass props to child page
+            books={this.state.books}
+            changeShelf={this.changeShelf}
+          />
+          )}
+        />
+        <Route path="/search" render={() => (
+          <SearchPage
+            changeShelf={this.changeShelf}
+          />
+        )}/>
       </div>
     )
   }
