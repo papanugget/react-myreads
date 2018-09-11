@@ -2,6 +2,7 @@
   "name": "react-myreads",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://papanugget.github.io/react-myreads",
   "dependencies": {
     "escape-string-regexp": "^1.0.5",
     "prop-types": "^15.6.2",
